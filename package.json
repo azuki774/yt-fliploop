@@ -1,0 +1,31 @@
+{
+  "name": "yt-fliploop",
+  "version": "1.0.0",
+  "description": "YouTubeループプレイヤー - 指定区間のループ再生と左右反転が可能",
+  "type": "module",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "compile": "tsc",
+    "watch": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "clean": "rm -rf dist",
+    "build": "pnpm run clean && pnpm run compile",
+    "serve": "npx simple-http-server . --port 8080"
+  },
+  "keywords": [
+    "youtube",
+    "player",
+    "loop",
+    "flip",
+    "mirror"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.0",
+    "typescript": "^5.7.2"
+  }
+}
