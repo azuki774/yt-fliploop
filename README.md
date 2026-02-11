@@ -13,7 +13,7 @@ YouTubeの動画を指定区間でループ再生し、左右反転ができるW
 
 - **言語**: TypeScript
 - **パッケージマネージャー**: pnpm (Nixで管理)
-- **ビルド**: TypeScript Compiler (tsc)
+- **ビルド**: Vite
 - **Linter**: ESLint
 - **ホスティング**: Docker (nginx)
 
@@ -39,11 +39,8 @@ pnpm install
 # 型チェック
 pnpm type-check
 
-# TypeScriptのコンパイル
-pnpm compile
-
-# ファイル監視して自動コンパイル
-pnpm watch
+# 開発サーバー起動（監視コンパイル付き）
+pnpm dev
 
 # Linterの実行
 pnpm lint
@@ -57,23 +54,30 @@ pnpm clean
 # ビルド
 pnpm build
 
-# 開発サーバー起動
-pnpm serve
+# プレビューサーバー（ビルド結果の確認）
+pnpm preview
 ```
 
 ## 開発手順
 
-1. ターミナル1でTypeScriptの監視コンパイルを実行
+1. Nix開発環境に入る
    ```bash
-   pnpm watch
+   nix develop
    ```
 
-2. ターミナル2で開発サーバーを起動
+2. 依存関係をインストール（初回のみ）
    ```bash
-   pnpm serve
+   pnpm install
    ```
 
-3. ブラウザで http://localhost:8080 にアクセス
+3. 開発サーバーを起動
+   ```bash
+   pnpm dev
+   ```
+
+4. ブラウザで http://localhost:5173 にアクセス
+
+※ Viteの開発サーバーはファイル監視とホットリロード（HMR）が自動的に有効になっています。
 
 ## Dockerでの実行
 

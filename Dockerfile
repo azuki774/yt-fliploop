@@ -16,10 +16,7 @@ RUN pnpm install --frozen-lockfile
 # ソースコードをコピー
 COPY . .
 
-# TypeScriptの型定義をグローバルにインストール（YouTube IFrame API用）
-RUN pnpm add -D @types/youtube
-
-# ビルドを実行
+# Viteでビルド
 RUN pnpm run build
 
 # 実行ステージ
@@ -29,8 +26,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # ビルド済みファイルと静的リソースをnginxにコピー
-COPY --from=builder /app/dist /usr/share/nginx/html/dist
-COPY --from=builder /app/index.html /usr/share/nginx/html/
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # ポートを公開
 EXPOSE 80
