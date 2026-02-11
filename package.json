@@ -5,13 +5,12 @@
   "type": "module",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "compile": "tsc",
-    "watch": "tsc --watch",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "clean": "rm -rf dist",
-    "build": "pnpm run clean && pnpm run compile",
-    "serve": "npx simple-http-server . --port 8080"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "youtube",
@@ -26,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "eslint": "^9.20.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vite": "^6.2.0"
   }
 }

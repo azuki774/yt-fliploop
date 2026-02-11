@@ -26,9 +26,9 @@
             echo ""
             echo "利用可能なコマンド:"
             echo "  pnpm install - 依存関係のインストール"
-            echo "  pnpm build  - ビルド"
-            echo "  pnpm lint   - リントチェック"
-            echo "  pnpm watch  - ファイル監視"
+            echo "  pnpm dev     - 開発サーバー起動"
+            echo "  pnpm build   - ビルド"
+            echo "  pnpm lint    - リントチェック"
           '';
         };
       }
